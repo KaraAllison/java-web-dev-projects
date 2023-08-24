@@ -9,8 +9,7 @@ public class CountingCharacters {
                 "put the quadratics into a form that can be factored allowing that side of the equation to " +
                 "equal zero. Once you’ve done that, it’s pretty straightforward from there.";
 
-        char[] characters = str.toCharArray();
-        for (char letter : characters) {
+        for (char letter : str.toCharArray()) {
             if (charCount.containsKey(letter)) {
                 int num = charCount.get(letter);
                 charCount.put(letter, num + 1);

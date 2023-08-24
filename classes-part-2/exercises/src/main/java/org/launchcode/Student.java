@@ -1,5 +1,7 @@
 package org.launchcode;
 
+import java.util.Objects;
+
 public class Student {
 
     private static int nextStudentId = 1;
@@ -30,17 +32,46 @@ public class Student {
 
 
     //TODO: Uncomment and complete the getGradeLevel method here:
-//    public String getGradeLevel() {
-//        // Determine the grade level of the student based on numberOfCredits
-//    }
+    public String getGradeLevel() {
+        if (this.numberOfCredits >= 90) {
+            return "Senior";
+        } else if (this.numberOfCredits >= 60) {
+            return "Junior";
+        } else if (this.numberOfCredits >= 30) {
+            return "Sophomore";
+        } else if (this.numberOfCredits >= 0) {
+            return "Freshman";
+        } else {
+            return null;
+        }
+        // Determine the grade level of the student based on numberOfCredits
+    }
 
     // TODO: Complete the addGrade method.
     public void addGrade(int courseCredits, double grade) {
+        double quality = this.gpa * this.numberOfCredits;
+        quality += courseCredits * grade;
+        this.numberOfCredits += courseCredits;
+        this.gpa = quality/this.numberOfCredits;
         // Update the appropriate fields: numberOfCredits, gpa
     }
 
     // TODO: Add your custom 'toString' method here. Make sure it returns a well-formatted String rather
     //  than just the class fields.
+    @Override
+    public String toString() {
+        String studentReport = String.format("%s is a %s with %d credits and a GPA of %.2f",
+                this.name, this.getGradeLevel(), this.getNumberOfCredits(), this.getGpa());
+        return studentReport;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Student student = (Student) o;
+        return studentId == student.studentId;
+    }
 
     // TODO: Add your custom 'equals' method here. Consider which fields should match in order to call two
     //  Student objects equal.

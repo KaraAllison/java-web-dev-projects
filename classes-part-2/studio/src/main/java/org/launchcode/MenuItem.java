@@ -13,6 +13,21 @@ public class MenuItem {
         this.isNew = iN;
     }
 
+    @Override
+    public String toString(){
+        return String.format("%s from the %s category, price: $%.2f%s.\n", this.description,
+                this.category, this.price, (this.isNew) ? " and is new to the menu" : "");
+    }
+    public boolean equals(MenuItem comp) {
+        if (this == comp) {
+            return true;
+        }
+        if (comp == null || this.getClass() != comp.getClass()) {
+            return false;
+        }
+        return this.description.equals(comp.description);
+    }
+
     public void setPrice(double price) {
         this.price = price;
     }
