@@ -45,8 +45,12 @@ public class Car {
         return gasTankLevel;
     }
 
-    public void setGasTankLevel(double gasTankLevel) {
-        this.gasTankLevel = gasTankLevel;
+    public void setGasTankLevel(double gasTankLevel) throws IllegalArgumentException {
+        if (gasTankLevel > this.getGasTankLevel()) {
+            throw new IllegalArgumentException("Can't exceed tank size");
+        } else {
+            this.gasTankLevel = gasTankLevel;
+        }
     }
 
     public double getMilesPerGallon() {
@@ -82,6 +86,9 @@ public class Car {
         double gallonsUsed = milesAbleToTravel / this.milesPerGallon;
         this.gasTankLevel = this.gasTankLevel - gallonsUsed;
         this.odometer += milesAbleToTravel;
+    }
+    public void addGas(double gas) throws IllegalArgumentException {
+            this.setGasTankLevel(gas + this.getGasTankLevel());
     }
 
 }
