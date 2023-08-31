@@ -1,3 +1,4 @@
+//Merge
 public class Cat {
 
     private boolean tired = false;
