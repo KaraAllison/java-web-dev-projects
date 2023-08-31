@@ -23,6 +23,14 @@ class BalancedBracketsTest {
         assertTrue(BalancedBrackets.hasBalancedBrackets("[]"));
     }
     @Test
+    public void simpleReversed() {
+        assertFalse(BalancedBrackets.hasBalancedBrackets("]["));
+    }
+    @Test
+    public void nestedReversed() {
+        assertFalse(BalancedBrackets.hasBalancedBrackets("[]][[]"));
+    }
+    @Test
     public void noBrackets() {
         assertTrue(BalancedBrackets.hasBalancedBrackets("test"));
     }
