@@ -26,9 +26,7 @@ public abstract class Question {
     public String getType() {
         return type;
     }
-    public boolean askQuestion() {
-        return true;
-    }
+    public abstract boolean askQuestion();
 
     public void setType(String type) {
         this.type = type;
