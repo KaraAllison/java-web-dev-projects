@@ -32,31 +32,31 @@ public abstract class BaseDisc implements OpticalDisc{
         System.out.println("Type: " + getType());
     }
 
-    public String getName() {
+    private String getName() {
         return name;
     }
 
-    public void setName(String name) {
+    private void setName(String name) {
         this.name = name;
     }
 
-    public double getCapacity() {
+    private double getCapacity() {
         return capacity;
     }
 
-    public void setCapacity(double capacity) {
+    private void setCapacity(double capacity) {
         this.capacity = capacity;
     }
 
-    public String getContents() {
+    private String getContents() {
         return contents;
     }
 
-    public void setContents(String contents) {
+    private void setContents(String contents) {
         this.contents = contents;
     }
 
-    public String getType() {
+    private String getType() {
         return type;
     }
 }
