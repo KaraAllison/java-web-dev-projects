@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.launchcode.HelloWorldTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-09-05T15:12:16" hostname="COSML-K200582" time="0.007">
+  <properties/>
+  <testcase name="testHelloWorld()" classname="org.launchcode.HelloWorldTest" time="0.007"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

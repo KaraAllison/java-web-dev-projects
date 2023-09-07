@@ -59,8 +59,4 @@ public abstract class BaseDisc implements OpticalDisc{
     public String getType() {
         return type;
     }
-
-    public void setType(String type) {
-        this.type = type;
-    }
 }
